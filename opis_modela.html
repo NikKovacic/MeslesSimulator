@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<!-- Univerza v Maiboru | Fakulteta za organizacijske vede -->
+<!-- Modeliranje kompleksnih sistemov | Andrej Škraba-->
+<!-- Nik Kovačič 2019 -->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--link google font: Roboto-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>Measles Simulator</title>    
+</head>
+<body>
+    <!-- css - small visual corrections -->
+    <style type="text/css">
+        body { 
+            background: #eeeeee !important; /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+            font-family: 'Roboto', sans-serif;
+        } 
+        .imgCode4 {
+            max-height: 520px !important;
+        }
+        footer {
+            background: #006385;
+            color: #eeeeee;
+        }
+        
+    </style>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #006385;" >
+        <a class="navbar-brand" href="opis_modela.html"><img src="img/orgLogo.png"></a> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="opis_modela.html">OPIS MODELA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="simulacija.html">SIMULACIJA</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 style="color: #006385;"><b>OPIS PROBLEMA</b></h4>        
+                <p>V novicah se je pred kratkim pojavila novica, da so na območju Škofje Loke opazili povečano število bolnikov z ošpicami. Zato sem se odločil, da bom ta aktualen problem uporabil pri izdelavi seminarske naloge.</p>
+                <p>Ošpice so bolezen, ki se pojavlja po celem svetu. Na njen pojav najbolj vplivajo gostota prebivalstva in dostopnost do cepljenja. Značilnosti te bolezni so: </p>
+                <ul>
+                    <li><b>Okužena oseba hitro širi okužbo na druge osebe:</b> po podatkih vira dostopnega na <a href="https://www.cdc.gov/measles/transmission.html?fbclid=IwAR2meM1Z1I0VwCyuAepax59Tw6_HwOTDKExVZdjL0H4QxGMhYSIuHKCi6jI">spletni strani</a> kar 90% vseh oseb, ki niso cepljene in jih niso še prebolele zboli ob stiku z okuženo osebo.</li>
+                    <li><b>Osebe, ki prebolijo ošpice, so trajno zaščitene proti njim.</b></li>
+                    <li><b>Osebe cepljene proti ošpicam se ne morejo nalezti od okužene osebe.</b></li>
+                </ul>      
+                <p>
+                    V nadaljevanju vam prikazujemo agentni model, ki prikazuje širjenje ošpic med prebivalstvom. Uporabniku je pri tem omogočena izbira števila prebivalstva, 
+                    odstotek odpornih oseb (cepljene in tiste, ki so okužbo že prebolele), in odstotek okuženih. Poleg agentnega modela sta v simulaciji nad njim pozicionirana 
+                    dva grafa. Prvi levi graf prikazuje trenutno število zdravih in okuženih oseb, drugi pa povprečno število okužb v času.
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 style="color: #006385;"><b>OPIS SIMULACIJSKEGA MODELA</b></h4>        
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10">
+                <p>
+                Namen omenjenega simulacijskega modela, do katerega lahko dostopate preko zavihka simulacija je čimbolj nazorno ponazoriti širjenje preučevane okužbe (ošpice). 
+                Cilji pa so narediti interaktiven model s katerim lahko ogledujemo hitrost širjenja okužbe pod različnimi pogoji. Z vpisom različnih vrednosti v polja lahko 
+                vplivamo na dejavnike, ki v največji meri pripomorejo k pojavu te bolezni. Z vpisom večje številske vrednosti v polje št. oseb lahko ponazorimo večjo gostoto 
+                prebivalstva z vpisom večjega odstotka odpornih oseb ponazorimo precepljenost prebivalstva (v Sloveniji je približno 89%), ki prav tako kot gostota prebivalsta 
+                igra ključno vlogu pri širjenju te bolezni. V simulaciji agentnega modela so osebe predstavljene s kvadrati. Pri tem je pomembno omentiti, da so zdrave osebe 
+                obarvane z zeleno barvo, okužene z rdečo in odporne z modro. Pri stiku okužene in zdrave osebe obstaja 90% možnost, da se zdrava oseba naleze od okužene 
+                (sprememba barve agenta iz zelene v rdečo). </p>
+                <p>
+                Kot že omenjeno sta nad njim prikazana dva grafa, ki prikazujeta trenutno število zdravih in okuženih oseb ter povprečno število okužb v času. V prvem grafu, 
+                ki prikazuje število zdravih ter okuženih oseb so zdrave prikazane z zeleno črto, okužene pa z rdečo.
+                </p>
+            </div>
+            <div class="col-sm-2">
+                <img src="img/logoOrg.png" class="rounded float-right" alt="logo"> 
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 style="color: #006385;"><b>OPIS MODELA Z ENAČBAMI IN ALGORITMI</b></h4>        
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>Na sliki spodaj lahko razberete, da sem pri izdelavi te seminarske naloge uporabil knjižnico Bootstrap, ki je prostodostopna preko spleta. Za njeno uporabo
+                    sem se odločil, zaradi prihranka časa pri izdelavi "front-enda" spletne strani. Pri izdelavi sem uporabil tudi Google Fonts, s katerim sem določil pisavo.
+                    V glavo html code pa sem dodal tudi skripto z javascript kodo v kateri so razredi s pomočjo katerih generiramo grafa prikazana v simulaciji.
+                </p>
+                <img src="img/usedLibaries.png" class="img-fluid" alt="includedLibaries">
+                <span><i>Slika 1: html head</i></span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+                <p> V nadaljevanju html kode sem s pomočjo Bootstrapa zapisal codo, ki skrbi za premikanje po navigacijski vrstici, naredil vnosno masko za vpis 
+                    podatkov ter gumb "potrdi", ki s pomočjo javascript funkcije <b>saveAndPrepare()</b> preveri vpisane podatke, uporabnika obvesti v 
+                    primeru, da so te nepravilno zapisani ter prikaže in zažene simulacijo modela glede na podane podatke (funkcija je prikazana na 
+                    sliki 2).
+                    
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <img src="img/functionSaveAndPrepareCode.png" class="img-fluid" alt="functionSaveAndPrepareCode">
+                <span><i>Slika 2: function SaveAndPrepare()</i></span>
+            </div> 
+            <div class="col-md-7">   
+                <img src="img/startFunctionCode.png" class="img-fluid" alt="startFunctionCode">
+                <span><i>Slika 3: function Start()</i></span>
+            </div>
+        </div>    
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>
+                Simulacijo zažene s pomočjo funkcije <b>start()</b>, ki je prikazana na sliki 3. Z njeno pomočjo nastavi pravilno število agentov (okuženih, zdravih ter 
+                odpornih oseb), nastavi grafa, in zažene funkcijo <b>loop()</b>. Funkcija loop() pa izriše platno in grafa ter na njih stalno izrisuje agente, pregleduje
+                bljižino le teh s pomočjo funkcije checkAgentProximity() ter posledično preverja tudi trke med njimi, nastavlja vrednosti na števcih ter prikazuje trenutne 
+                podatke na grafih. 
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <img src="img/loopCode.png" class="img-fluid w-100 imgCode4" alt="loopCode">
+                <span><i>Slika 4: function loop()</i></span>
+            </div>
+        </div>
+        <br>
+
+    </div>
+</body>
+<footer class="page-footer font-small">
+    <div class="footer-copyright text-center py-3">
+        <p>FOV Kranj | Modeliranje kompleksnih sistemov | 2019</p>
+    </div>
+</footer>
